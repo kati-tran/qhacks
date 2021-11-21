@@ -37,7 +37,7 @@ export class PostserviceService {
       headers.append('Accept', 'application/json');
       headers.append('Content-Type', 'application/json');
       headers.append('responseType', 'text');
-    return this.http.get(`${this.apiurl}`, {httpOptions:headers}).pipe(
+    return this.http.get(`${this.apiurl}`, httpOptions).pipe(
       map(results => results['GetPosts'])
     );
   }
