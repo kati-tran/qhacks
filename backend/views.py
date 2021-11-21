@@ -13,7 +13,7 @@ from rest_framework.decorators import api_view
 def post_list(request):
 	# GET list of posts, POST a new post, DELETE all posts
 	if request.method == 'GET':
-		posts = Post.objects.all()
+		posts = Post.objects.all().order_by('-createDate')
 
 		title = request.GET.get('title', None)
 
@@ -30,7 +30,7 @@ def post_list(request):
 		if type is not None:
 			posts = posts.filter(type=type)
 
-
+		
 		posts_serializer = PostSerializer(posts, many=True)
 		 # 'safe=False' for objects serialization
 		return JsonResponse(posts_serializer.data, safe=False)
