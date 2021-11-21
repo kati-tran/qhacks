@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-title >Create Post</ion-title>
+  
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="dismiss()">
+        <ion-icon color="light" slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea type="text" [(ngModel)]="description" name="description" required></ion-textarea>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Choice of Payment</ion-label>
+      <ion-input type="text" [(ngModel)]="payment" name="payment" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Donation Goal</ion-label>
+      <ion-input type="numeric" [(ngModel)]="donationgoal" name="donationgoal" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Tags (comma separated)</ion-label>
+      <ion-input type="text" [(ngModel)]="tags" name="tags"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="secondary" expand="block" (click)="createPost()">Create Post</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
