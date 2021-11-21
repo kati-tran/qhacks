@@ -13,4 +13,6 @@ class PostSerializer(serializers.ModelSerializer):
                   'user_id',
                   'published',
                   'type',
-                  'createDate')
+                  'createDate',
+                  'goalDonation',
+                  'currentDonation')

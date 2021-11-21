@@ -7,6 +7,8 @@ class Post(models.Model):
     pay_email = models.CharField(max_length=70, blank=False, default='')
     createDate = models.DateTimeField(default=None, blank=True, null=True)
     type = models.IntegerField(default=1)
+    goalDonation = models.IntegerField(default=100)
+    currentDonation = models.IntegerField(default=70)
     user_id = models.IntegerField()
     published = models.BooleanField(default=False)
 
