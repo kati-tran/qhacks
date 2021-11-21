@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.contrib.postgres.fields import ArrayField 
+
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=70, blank=False, default='')
@@ -11,6 +13,9 @@ class Post(models.Model):
     currentDonation = models.IntegerField(default=70)
     user_id = models.IntegerField()
     published = models.BooleanField(default=False)
+    tags =  ArrayField(
+            models.CharField(max_length=15, blank=True),
+            size=8, null=True)
 
     def __str__(self):
         return f"{self.title} - {self.description[:30]}...\t\t\t{self.createDate}"

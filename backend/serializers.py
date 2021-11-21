@@ -15,4 +15,5 @@ class PostSerializer(serializers.ModelSerializer):
                   'type',
                   'createDate',
                   'goalDonation',
-                  'currentDonation')
+                  'currentDonation',
+                  'tags')
