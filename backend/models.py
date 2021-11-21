@@ -10,7 +10,7 @@ class Post(models.Model):
     createDate = models.DateTimeField(default=None, blank=True, null=True)
     type = models.IntegerField(default=1)
     goalDonation = models.IntegerField(default=100)
-    currentDonation = models.IntegerField(default=70)
+    currentDonation = models.IntegerField(default=0)
     user_id = models.IntegerField()
     published = models.BooleanField(default=False)
     tags =  ArrayField(
