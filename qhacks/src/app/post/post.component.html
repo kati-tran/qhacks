@@ -1,24 +1,28 @@
 <ion-list>
- 
 
-    <ion-card *ngFor="let item of results">
-      <img src="../assets/g1.jpg" />
-      <ion-card-header>
-        <ion-card-title>{{item.title}}</ion-card-title>
-        <ion-card-subtitle>{{item.user_id}}</ion-card-subtitle>
-        <ion-card-subtitle>{{item.createDate}}</ion-card-subtitle>
-        <ion-chip color="primary">Verified user</ion-chip>
-      </ion-card-header>
-    
-      <ion-card-content>
-        <p>{{item.description}}</p>
-      </ion-card-content>
-    <ion-button style="float:right; margin-right:10px; margin-bottom:20px;">
+
+  <ion-card *ngFor="let item of results">
+
+    <ion-card-header>
+      <ion-progress-bar color="secondary" value="{{item.currentDonation / item.goalDonation}}"></ion-progress-bar>
+      <ion-card-subtitle><b>${{item.currentDonation}} raised</b> of ${{item.goalDonation}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{item.description}}</p>
+      <div class="element" *ngFor="let tag of item.tags">
+        <ion-chip color="primary">{{tag}}</ion-chip>
+      </div>
+    </ion-card-content>
+    <ion-button expand="block" size="small" color="secondary" fill="outline">
       Donate
     </ion-button>
-    </ion-card>
-    
+  </ion-card>
 
-  
+
+
 
 </ion-list>
+
+
+<!--{'color-red': item.currentDonation / item.goalDonation <= 0.3, 'color-yellow': 0.3 < item.currentDonation / item.goalDonation <= 0.5, 'color-green': .5 < item.currentDonation / item.goalDonation}-->

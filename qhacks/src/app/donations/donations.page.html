@@ -1,10 +1,19 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>donations</ion-title>
+    <ion-buttons slot="start">
+      <ion-title >Donations</ion-title>
+  
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon color="light" slot="icon-only" name="add-circle-outline" (click)="createPost()"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button type="submit" color="danger" expand="block" (click)="createPost()">Create Post</ion-button>
-<app-post></app-post>
+  <!--<ion-button type="submit" color="danger" expand="block" (click)="createPost()">Create Post</ion-button>-->
+<app-post [type]="1"></app-post>
 </ion-content>

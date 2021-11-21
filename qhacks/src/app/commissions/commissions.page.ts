@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostserviceService, PostType } from './../postservice.service';
 
 @Component({
   selector: 'app-commissions',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommissionsPage implements OnInit {
 
-  constructor() { }
+  constructor(private postService: PostserviceService) { }
 
   ngOnInit() {
   }

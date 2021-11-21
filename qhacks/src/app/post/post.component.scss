@@ -1,6 +1,9 @@
 ion-item {
     background-color: #f5e7c1;
 }
+ion-card{
+    --ion-background-color: white;
+}
 
 ion-chip {
     margin-top:0px;
@@ -14,4 +17,22 @@ ion-chip {
     margin-left:0px;
     padding-left: 3px;
     padding-right: 3px;
+}
+
+.element {
+    display: inline-block;
+  }
+
+.color-red {
+    color: red; 
+}
+.color-yellow {
+    color: yellow; 
+}
+.color-green {
+    color: green; 
+}
+
+.black {
+    color: black;
 }

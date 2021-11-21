@@ -5,8 +5,8 @@ import { map } from 'rxjs/operators';
 
 export enum PostType {
   all = '',
-  commission = 'commission',
-  donation = 'donation'
+  commission = '2',
+  donation = '1'
 }
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class PostserviceService {
   }
 
   getPosts(type: PostType): Observable<any> {
-    return this.http.get(this.apiurl)
+    return this.http.get(`${this.apiurl}?type=${type}`)
   }
 
   registerUser(postdata: Object){

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {PostComponent} from '../post/post.component'
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
@@ -15,6 +16,7 @@ import { CommissionsPage } from './commissions.page';
     IonicModule,
     CommissionsPageRoutingModule
   ],
-  declarations: [CommissionsPage]
+  declarations: [CommissionsPage, PostComponent],
+  exports: [PostComponent]
 })
 export class CommissionsPageModule {}

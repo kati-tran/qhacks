@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostserviceService, PostType } from './../postservice.service';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ export class PostComponent implements OnInit {
 
   results: any[];
   searchTerm: string = '';
-  type: PostType = PostType.all;
+  @Input() type: PostType
 
   constructor(private postService: PostserviceService) { }
 
@@ -19,6 +19,7 @@ export class PostComponent implements OnInit {
 
   getPostsChanged() {
     // Call our service function which returns an Observable
+    console.log(this.type);
     this.postService.getPosts(this.type).subscribe((answer) => {
       console.log(answer)
       this.results = answer;
