@@ -9,18 +9,24 @@ import { Observable } from 'rxjs';
 })
 export class PostComponent implements OnInit {
 
-  results: Observable<any>;
+  results: any[];
   searchTerm: string = '';
   type: PostType = PostType.all;
 
   constructor(private postService: PostserviceService) { }
 
-  ngOnInit() {this.getPostsChanged()}
+  ngOnInit() { this.getPostsChanged() }
 
   getPostsChanged() {
     // Call our service function which returns an Observable
-    this.results = this.postService.getPosts(this.type);
-    console.log(this.results)
+    this.postService.getPosts(this.type).subscribe((answer) => {
+      console.log(answer)
+      this.results = answer;
+      //console.log(this.results); // here you get the json 
+    }, error => {
+      console.log(error)
+    });
+    //console.log(this.results)
   }
 
 }
