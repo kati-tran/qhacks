@@ -1,7 +1,0 @@
-{
-  "name": "qhacks2021",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react"
-}
