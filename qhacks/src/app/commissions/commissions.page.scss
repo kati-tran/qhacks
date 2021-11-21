@@ -1,0 +1,28 @@
+ion-content{
+    --ion-background-color:#FDFDFF;
+      // overwrite inline styles
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+ion-header{
+    --ion-background-color:#8CBBF1;
+    --ion-color: #FDFDFF;
+}
+
+ion-toolbar{
+    --min-height:4%!important;
+    --padding:0!important;
+    --ion-padding-bottom:0px;
+    --ion-padding:0px;
+  }
+ion-title{
+    --ion-color: #FDFDFF;
+    --color: #FDFDFF;
+}
+ion-icon{
+    --color: #FDFDFF;
+}

@@ -14,8 +14,11 @@
         <ion-chip color="primary">{{tag}}</ion-chip>
       </div>
     </ion-card-content>
-    <ion-button expand="block" size="small" color="secondary" fill="outline">
+    <ion-button (click) = "buttonclick(item)" expand="block" size="small" color="secondary" fill="outline">
       Donate
+      <div *ngIf="item.published === true">
+        {{item.pay_email}}
+      </div>
     </ion-button>
   </ion-card>
 

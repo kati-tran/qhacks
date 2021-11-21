@@ -5,5 +5,29 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
 
+
+    <ion-card *ngFor="let item of results">
+  
+      <ion-card-header>
+        <ion-progress-bar color="secondary" value="{{item.currentDonation / item.goalDonation}}"></ion-progress-bar>
+        <ion-card-subtitle><b>${{item.currentDonation}} raised</b> of ${{item.goalDonation}}</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <p>{{item.description}}</p>
+        <div class="element" *ngFor="let tag of item.tags">
+          <ion-chip color="primary">{{tag}}</ion-chip>
+        </div>
+      </ion-card-content>
+      <ion-button expand="block" size="small" color="secondary" fill="outline">
+        Donate
+      </ion-button>
+    </ion-card>
+  
+  
+  
+  
+  </ion-list>
 </ion-content>

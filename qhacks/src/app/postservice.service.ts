@@ -25,6 +25,9 @@ export class PostserviceService {
   getPosts(type: PostType): Observable<any> {
     return this.http.get(`${this.apiurl}?type=${type}`)
   }
+  getUserPosts(userID:String): Observable<any> {
+    return this.http.get(`${this.apiurl}?user_id=${userID}`)
+  }
 
   registerUser(postdata: Object){
     this.http.post(`${this.apiurl}`, postdata)

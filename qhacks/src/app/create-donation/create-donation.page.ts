@@ -31,12 +31,13 @@ export class CreateDonationPage implements OnInit {
       "type": this.type
     }
     this.postService.createPost(postData);
-
+    this.dismiss();
   }
 
   dismiss() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
+    const closeModal: string = "Modal Closed";
     this.modalController.dismiss({
       'dismissed': true
     });

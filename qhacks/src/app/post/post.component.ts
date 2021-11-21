@@ -30,4 +30,8 @@ export class PostComponent implements OnInit {
     //console.log(this.results)
   }
 
+  buttonclick(item){
+    item.published = true;
+  }
+
 }
