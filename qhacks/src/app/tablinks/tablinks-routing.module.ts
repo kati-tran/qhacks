@@ -8,29 +8,33 @@ const routes: Routes = [
     path: 'tablinks',
     component: TablinksPage,
     children: [
+      /*
       {
         path: 'paypal-component',
         loadChildren: () => import('../paypal-component/paypal-component.module').then(m => m.PaypalComponentPageModule)
-      },
-      /*
-      {
-        path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule)
-      },
-      {
-        path: 'settings',
-        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
       },*/
       {
+        path: 'donations',
+        loadChildren: () => import('../donations/donations.module').then( m => m.DonationsPageModule)
+      },
+      {
+        path: 'commissions',
+        loadChildren: () => import('../commissions/commissions.module').then( m => m.CommissionsPageModule)
+      },
+      {
+        path: 'account',
+        loadChildren: () => import('../account/account.module').then( m => m.AccountPageModule)
+      },
+      {
         path: '',
-        redirectTo: '/tablinks/paypal-component',
+        redirectTo: '/tablinks/donations',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tablinks/paypal-component',
+    redirectTo: '/tablinks/donations',
     pathMatch: 'full'
   }
 ];

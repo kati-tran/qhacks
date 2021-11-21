@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-paypal-component',
@@ -8,12 +9,12 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
 })
 export class PaypalComponentPage implements OnInit {
 
-  constructor(private payPal: PayPal) { }
+  constructor(private payPal: PayPal, public http: HttpClient) { }
   paymentAmount: string = '3.33';
   currency: string = 'USD';
+
   ngOnInit() {
   }
-
 
   payWithPaypal() {
     this.payPal.init({
