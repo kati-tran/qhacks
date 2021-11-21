@@ -18,4 +18,6 @@ import { DonationsPage } from './donations.page';
   declarations: [DonationsPage, PostComponent],
   exports: [PostComponent]
 })
-export class DonationsPageModule {}
+export class DonationsPageModule {
+  
+}

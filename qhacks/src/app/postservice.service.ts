@@ -25,4 +25,21 @@ export class PostserviceService {
   getPosts(type: PostType): Observable<any> {
     return this.http.get(this.apiurl)
   }
+
+  registerUser(postdata: Object){
+    this.http.post(`${this.apiurl}`, postdata)
+    .subscribe(data => {
+      console.log(data['_body']);
+     }, error => {
+      console.log(error);
+    });
+  }
+  createPost(postdata: Object){
+    this.http.post(`${this.apiurl}`, postdata)
+    .subscribe(data => {
+      console.log(data['_body']);
+     }, error => {
+      console.log(error);
+    });
+  }
 }
