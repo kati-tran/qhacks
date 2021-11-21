@@ -23,22 +23,9 @@ export class PostserviceService {
   }
 
   getPosts(type: PostType): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Expose-Headers': '*',
-        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-        'Access-Control-Allow-Headers': 'access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,access-control-expose-headers,content-type',
-        'Content-Type':  'application/json',
-        'Accept': 'application/json, text/plain'
-        })
-      };
-      var headers = new Headers();
-      headers.append('Accept', 'application/json');
-      headers.append('Content-Type', 'application/json');
-      headers.append('responseType', 'text');
-    return this.http.get(`${this.apiurl}`, httpOptions).pipe(
-      map(results => results['GetPosts'])
-    );
+    this.http.get(this.apiurl).subscribe((response) => {
+  console.log(response);
+});
+  return undefined
   }
 }
