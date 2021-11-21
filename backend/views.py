@@ -16,8 +16,20 @@ def post_list(request):
 		posts = Post.objects.all()
 
 		title = request.GET.get('title', None)
+
+		userid = request.GET.get("user_id", None)
+
+		type = request.GET.get("type", None)
+
 		if title is not None:
 			posts = posts.filter(title__icontains=title)
+		
+		if userid is not None:
+			posts = posts.filter(user_id=userid)
+
+		if type is not None:
+			posts = posts.filter(type=type)
+
 
 		posts_serializer = PostSerializer(posts, many=True)
 		 # 'safe=False' for objects serialization
@@ -57,4 +69,5 @@ def post_detail(request, pk):
 	except Post.DoesNotExist: 
 		return JsonResponse({'message': 'The post does not exist'}, status=status.HTTP_404_NOT_FOUND) 
 	# GET / PUT / DELETE post
+
 

@@ -12,4 +12,5 @@ class PostSerializer(serializers.ModelSerializer):
                   'pay_email',
                   'user_id',
                   'published',
+                  'type',
                   'createDate')
